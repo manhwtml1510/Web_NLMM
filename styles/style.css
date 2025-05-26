@@ -156,57 +156,8 @@ body {
 }
 
 .right-bar{
+    width: 75vw;
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 700px;
-    position: absolute;
-    right: 200px;
-    font-size: 20px;
-    font-family:"Didot", serif ;
-}
-
-
-.right-bar h2 {
-    font-family:"Didot", serif ;
-    font-size: 28px ;
-}
-
-.right-bar label {
-    text-align: left;
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-family:"Didot", serif ;
-    font-size: 20px;
-}
-
-.right-bar input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.right-bar button {
-    background-color: #000000;
-    color: white;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 20px;
-    margin-top: 30px;
-}
-
-.right-bar button:hover {
-    background-color: #2cad04;
 }
 
 
