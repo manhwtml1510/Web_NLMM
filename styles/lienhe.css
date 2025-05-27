@@ -10,31 +10,34 @@
     font-family: "Didot", serif ;
 }
 
-.content-container{
+.content-container {
     background-color: rgb(250,250,250);
     min-height: 50vw;
     display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .left-bar{
-    width: 25vw;
+    flex: 1;
     text-align: center;
-    align-items: center;
     border-right: 1px solid black;
+    min-width: 250px;
+    padding: 20px;
 }
 
 .right-bar{
+    flex: 2;
+    max-width: 700px;
     text-align: center;
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 700px;
-    position: absolute;
-    right: 200px;
     font-size: 20px;
-    font-family:"Didot", serif ;
+    font-family: "Didot", serif;
 }
 
 
@@ -76,4 +79,17 @@
 .right-bar button:hover {
     background-color: #2cad04;
 }
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        padding: 10px;
+    }
 
+    .left-bar {
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+}
+    .right-bar {
+        max-width: 100%;
+    }
+}
