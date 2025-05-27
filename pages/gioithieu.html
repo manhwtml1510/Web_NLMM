@@ -1,7 +1,35 @@
-<section class="title-bar">
-    <h1 id="title">Về NLMM</h1>
-</section>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="styles/gioithieu.css">
+  <meta charset="UTF-8">
+  <title>NLMM</title>
+</head>
+<body>
 
-<section class="content-container">
-
-</section>
+  <div class="team-container">
+    <div class="member-card">
+      <h3>Phạm Văn Minh</h3>
+      <button onclick="showInfo(0)">Xem thông tin</button>
+    </div>
+    <div class="member-card">
+      <h3>Phạm Hữu Linh</h3>
+      <button onclick="showInfo(1)">Xem thông tin</button>
+    </div>
+    <div class="member-card">
+      <h3>Nguyễn Đình Đức Mạnh</h3>
+      <button onclick="showInfo(2)">Xem thông tin</button>
+    </div>
+    <div class="member-card">
+      <h3>Trần Đình Nhân</h3>
+      <button onclick="showInfo(3)">Xem thông tin</button>
+    </div>
+  </div>
+  <div id="member-info" class="info-box" style="display: none;">
+    <h2 id="member-name"></h2>
+    <p id="member-birthday"></p>
+    <p id="member-description"></p>
+  </div>
+  <script src=""></script>
+</body>
+</html>
