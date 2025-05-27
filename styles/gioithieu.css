@@ -45,4 +45,13 @@ body {
 .info-box {
     text-align: center;
     margin-top: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
 }
