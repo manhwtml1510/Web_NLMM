@@ -1,0 +1,106 @@
+* {
+    margin: 0 0;
+    padding: 0 0;
+    justify-content: space-evenly;
+    max-width: 100vw;
+    list-style-type: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    align-items: center;
+}
+
+
+/* Bố cục chung */
+.container {
+    display: flex;
+    max-width: 100%;
+}
+
+.box {
+    width: 100%;
+}
+
+
+
+/* Đầu trang */
+.header {
+    background-color: rgba(250, 250, 250, 0.3);
+    padding: 15px;
+}
+
+.header-logo{
+    width: 10%;
+}
+
+.header-nav {
+    width: 60%;
+}
+
+.header-acction{
+    width: 20%;
+}
+
+
+#logo {
+    font-family: Papyrus, sans-serif ;
+    font-size: clamp(28px, 3vw, 52px)
+}
+
+
+.nav-text {
+    text-decoration: none;
+    color: black;
+    font-size: clamp(10px, 3vw, 22px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-text:hover {
+    color: red;
+}
+
+
+
+/* Nút bấm */
+.action-button{
+    background: none;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+}
+.action-button:hover{
+    background: rgba(255,0,0,0.1);
+    border-radius: 20px;
+}
+.icon{
+    width: clamp(28px, 2vw, 45px);
+    height: clamp(28px, 2vw, 45px);
+}
+
+
+
+/* Ô tìm kiếm */
+.header-search {
+    width: 10vw;
+}
+
+.search-box{
+    background-color: white;
+    border: 2px solid #CCC;
+    border-radius: 30px;
+    padding: 15px 10px;
+
+}
+.search {
+    width: 90%;
+}
+
+
+/* Ẩn khi màn hình bé*/
+@media (max-width: 800px) {
+    .mobile-hidden{
+        display: none;
+    }
+}
