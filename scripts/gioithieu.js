@@ -20,11 +20,10 @@ const members = [
     desc: "Trần Đình Nhân: Siêu lao công."
     }
 ];
-
-window.showInfo = function(index) {
+function showInfo(index) {
     const infoBox = document.getElementById("member-info");
     document.getElementById("member-name").textContent = members[index].name;
     document.getElementById("member-birthday").textContent = "Ngày sinh: " + members[index].birthday;
     document.getElementById("member-description").textContent = members[index].desc;
     infoBox.style.display = "block";
-};
+}
