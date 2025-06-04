@@ -57,7 +57,7 @@ Tư vẫn sẽ sớm liên hệ với bạn để tư vấn.`)
     } else {
         alert(`Bạn nhập thiếu thông tin rồi.
 Bạn hãy để lại thông tin đầy đủ để NLMM có 
-thể liên hệ tư vấn với bạn dễ ràng hơn.`)
+thể liên hệ tư vấn với bạn dễ dàng hơn.`)
     }
 
     console.log(map) // xem map trong console
