@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Didot", serif ;
 }
 .team-container {
     display: flex;
@@ -12,7 +12,7 @@ body {
 .member-card {
     width: 220px;
     height: auto;
-    background-color: #e6e6e6;
+    background-color: #eeeeee;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;

@@ -1,0 +1,502 @@
+[
+    {
+      "ten": "Roja Elysium Cologne",
+      "thuonghieu": "Roja",
+      "gia": 5150000,
+      "phongcach": "Mát mẻ, Nổi bật, Sang chảnh",
+      "dungtich": "100ml",
+      "xuatsu": "Anh",
+      "gioitinh": "Nam",
+      "image": "https://lanperfume.com/wp-content/uploads/2024/07/elysium-pour-homme.jpg"
+    },
+    {
+      "ten": "Aterlier Des Ors Nuda Veritas",
+      "thuonghieu": "Atelier Des Ors",
+      "gia": 4050000,
+      "phongcach": "Mát mẻ, Nhẹ nhàng, Tinh tế",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Unisex",
+      "image": "https://nuochoamc.com/upload/images/san-pham/991/atelier-des-ors-nuda-veritas-100ml6.webp"
+    },
+    {
+      "ten": "Calvin Klein CK One",
+      "thuonghieu": "Calvin Klein",
+      "gia": 650000,
+      "phongcach": "Dễ chịu, Năng động, Nhẹ nhàng",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Unisex",
+      "image": "https://ttperfume.vn/wp-content/uploads/2024/07/nuoc-hoa-unisex-calvin-klein-ck-one-chinh-hang.jpg.webp"
+    },
+    {
+      "ten": "Jean Paul Gaultier Scandal By Night",
+      "thuonghieu": "Jean Paul Gaultier",
+      "gia": 3200000,
+      "phongcach": "Gợi cảm, Nữ tính, Quyến rũ",
+      "dungtich": "80ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://tiemnuochoa.vn/wp-content/uploads/2023/10/Jean-Paul-Gaultier-Scandal-By-Night-EDP-Intense-30ml.jpg"
+    },
+    {
+      "ten": "Elizabeth Arden White Tea",
+      "thuonghieu": "Elizabeth Arden",
+      "gia": 990000,
+      "phongcach": "Nữ tính, Tự nhiên, Tươi mát",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://nuochoamc.com/upload/images/san-pham/2676/elizabeth-arden-white-tea-2022-edp4.webp"
+    },
+    {
+      "ten": "MCM Ultra EDP",
+      "thuonghieu": "MCM",
+      "gia": 1550000,
+      "phongcach": "Cuốn hút, Lôi cuốn, Mê hoặc",
+      "dungtich": "75ml",
+      "xuatsu": "Đức",
+      "gioitinh": "Nữ",
+      "image": "https://lisa.vn/wp-content/uploads/2024/08/Nuoc-hoa-nu-MCM-Ultra-EDP12.jpg"
+    },
+    {
+      "ten": "Narciso Rodriguez Musc Nude For Her EDP",
+      "thuonghieu": "Narciso Rodriguez",
+      "gia": 2050000,
+      "phongcach": "Cuốn hút, Kiêu kỳ, Nịnh mũi",
+      "dungtich": "50ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://yeuhangngoai.net/wp-content/uploads/2024/04/thiet-ke-narciso-rodriguez-musc-nude-for-her-edp.jpg"
+    },
+    {
+      "ten": "Bleu de Chanel EDP",
+      "thuonghieu": "Chanel",
+      "gia": 3750000,
+      "phongcach": "Chững chạc, Hấp dẫn, Mạnh mẽ, Sang trọng",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://sonmoicaocap.vn/wp-content/uploads/2021/08/chanel_blue-de-chanel-parfum_1024x1024.jpg"
+    },
+    {
+      "ten": "Stronger With You Intensely EDP",
+      "thuonghieu": "Giorgio Armani",
+      "gia": 3200000,
+      "phongcach": "Ấm áp, Cuốn hút, Mạnh mẽ",
+      "dungtich": "100ml",
+      "xuatsu": "Ý",
+      "gioitinh": "Nam",
+      "image": "https://admin.vuahanghieu.com/upload/product/2024/12/nuoc-hoa-nam-giorgio-armani-emporio-armani-stronger-with-you-intensely-edp-100ml-677398be02a6f-31122024140950.jpg"
+    },
+    {
+      "ten": "Valentino Uomo Intense Born In Roma",
+      "thuonghieu": "Valentino",
+      "gia": 2850000,
+      "phongcach": "Hấp dẫn, Lịch lãm, Nam tính",
+      "dungtich": "100ml",
+      "xuatsu": "Ý",
+      "gioitinh": "Unisex",
+      "image": "https://nuochoa95.com/Data/images/san%20pham/Valentino/Valentino-Uomo-Born-In-Roma-Intense-1.webp"
+    },
+    {
+      "ten": "Ysl Y EDP",
+      "thuonghieu": "Yves Saint Laurent",
+      "gia": 2750000,
+      "phongcach": "Mát mẻ, Nhẹ nhàng, Ngọt ngào",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://file.hstatic.net/1000025647/file/yves-saint-laurent-y-men-edp-60ml-2-c43c5321caea49c797d04906735d2cf2_63c314dd6a12484fbdaae65defad8289_1024x1024.jpg"
+    },
+    {
+      "ten": "Lancome La vie est Belle",
+      "thuonghieu": "Lancome",
+      "gia": 2850000,
+      "phongcach": "Ngọt ngào, Nữ tính, Dịu dàng",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://tienperfume.vn/wp-content/uploads/2023/04/Nuoc-hoa-nu-LANCOME-La-Vie-Est-Belle.jpg"
+    },
+    {
+      "ten": "Dior Sauvage EDP",
+      "thuonghieu": "Dior",
+      "gia": 3690000,
+      "phongcach": "Mạnh mẽ, tự nhiên, quyến rũ",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://product.hstatic.net/200000862539/product/f94f131c5afab14725b4608c15e141aa_b58a142d463f482384af0ac9fdc45b22.jpg"
+    },
+    {
+      "ten": "Daisy Eau So Fresh",
+      "thuonghieu": "Marc Jacobs",
+      "gia": 2750000,
+      "phongcach": "Tươi mới, nữ tính, ngọt ngào",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Nữ",
+      "image": "https://product.hstatic.net/1000006063/product/nuoc-hoa-daisy-eau-so-fresh-marc-jacobs-edt-125ml_1cd47c34c6dc4f57b2b3a5c960fe3e8c_1024x1024.jpg"
+    },
+    {
+      "ten": "Daisy Love Eau so Sweet",
+      "thuonghieu": "=Marc Jacobs",
+      "gia": 2550000,
+      "phongcach": "Ngọt ngào, nữ tính, nhẹ nhàng",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Nữ",
+      "image": "https://yeuhangngoai.net/wp-content/uploads/2023/10/Review_Daisy_Love_Marc_Jacobs_Eau_So_Sweet_EDT.jpg"
+    },
+    {
+      "ten": "Daisy Wild",
+      "thuonghieu": "=Marc Jacobs",
+      "gia": 3200000,
+      "phongcach": "Tự nhiên, trẻ trung, tươi mới",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Nữ",
+      "image": "https://bizweb.dktcdn.net/100/106/604/products/435039744-1340145840720848-8968251242247862199-n.jpg?v=1719211887860"
+    },
+    {
+      "ten": "Mont Blanc Explorer",
+      "thuonghieu": "Mont Blanc",
+      "gia": 1650000,
+      "phongcach": "Nam tính, mát mẻ, năng động",
+      "dungtich": "100ml",
+      "xuatsu": "Đức",
+      "gioitinh": "Nam",
+      "image": "https://tienperfume.vn/wp-content/uploads/2023/09/Nuoc-hoa-Montblanc-Explorer-EDP-Tien-Perfume.jpg"
+    },
+    {
+      "ten": "Mont Blanc Explorer Platinum",
+      "thuonghieu": "Mont Blanc",
+      "gia": 1750000,
+      "phongcach": "Nam tính, mát mẻ, trưởng thành",
+      "dungtich": "100ml",
+      "xuatsu": "Đức",
+      "gioitinh": "Nam",
+      "image": "https://ttperfume.vn/wp-content/uploads/2024/07/nuoc-hoa-nam-montblanc-explorer-platinum-ttperfume-1024x1024.jpg"
+    },
+    {
+      "ten": "Narciso Rodriguez Poudree EDP",
+      "thuonghieu": "Narciso Rodriguez",
+      "gia": 2250000,
+      "phongcach": "Ngọt ngào, Quyến rũ, Dịu dàng",
+      "dungtich": "90ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://down-vn.img.susercontent.com/file/cc2367565d5f3b8f8fca6dc47c9cc804"
+    },
+    {
+      "ten": "Acqua di Gio EDT",
+      "thuonghieu": "Giorgio Armani",
+      "gia": 2950000,
+      "phongcach": "Tươi mới, biển cả, nam tính",
+      "dungtich": "200ml",
+      "xuatsu": "Ý",
+      "gioitinh": "Nam",
+      "image": "https://eap.com.vn/wp-content/uploads/2023/12/review-nuoc-hoa-acqua-di-gio-su-dung-khi-nao-278876911_1309291679561618_5134185040453222655_n-mfparis.jpg.webp"
+    },
+    {
+      "ten": "1 Million",
+      "thuonghieu": "Paco Rabanne",
+      "gia": 3500000,
+      "phongcach": "Ngọt ngào, sang trọng, quyến rũ",
+      "dungtich": "100ml",
+      "xuatsu": "Tây Ban Nha",
+      "gioitinh": "Nam",
+      "image": "https://product.hstatic.net/1000339918/product/paco-rabanne-1-million-luky-edt_b1cdef317e0b401d911228e773c0cd04_master.jpg"
+    },
+    {
+      "ten": "Issey Miyake L’Eau d’Issey Pour Homme Eau & Cèdre",
+      "thuonghieu": "Issey Miyake",
+      "gia": 2560000,
+      "phongcach": "Mạnh mẽ, Tươi mát, Hiện đại",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://nuochoamc.com/upload/images/san-pham/1397/issey-miyake-l-eau-d-issey-pour-homme-eau-cedre-2022-intense-edt1.webp"
+    },
+    {
+      "ten": "Terre d’Hermès",
+      "thuonghieu": "Hermès",
+      "gia": 4320000,
+      "phongcach": "Gỗ, đất, nam tính",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://tiemnuochoa.vn/wp-content/uploads/2023/08/Hermes-Terre-DHermes-EDT-chiet.jpg"
+    },
+    {
+      "ten": "Salvatore Ferragamo Signorina Libera",
+      "thuonghieu": "Salvatore Ferragamo",
+      "gia": 2150000,
+      "phongcach": "Nhẹ nhàng, Nữ tính, Thanh lịch",
+      "dungtich": "100ml",
+      "xuatsu": "Ý",
+      "gioitinh": "Nữ",
+      "image": "https://nuochoarosa.com/wp-content/uploads/2023/08/Salvatore-Ferragamo-Signorina-Libera-6.jpg"
+    },
+    {
+      "ten": "Salvatore Ferragamo Signorina Eau de Parfum",
+      "thuonghieu": "Salvatore Ferragamo",
+      "gia": 1950000,
+      "phongcach": "Nữ tính , Sang trọng, Tươi mới, Hiện đại",
+      "dungtich": "100ml",
+      "xuatsu": "Ý",
+      "gioitinh": "Nữ",
+      "image": "https://product.hstatic.net/200000117693/product/61wxzt6tsyl._sl1250__7962dd1c82b9454f96c9091e0bd35817.jpg"
+    },
+    {
+      "ten": "Salvatore Ferragamo Signorina Misteriosa",
+      "thuonghieu": "Salvatore Ferragamo",
+      "gia": 2160000,
+      "phongcach": "Ngọt ngào, Quyến rũ, Sành điệu",
+      "dungtich": "100ml",
+      "xuatsu": "Ý",
+      "gioitinh": "Nữ",
+      "image": "https://product.hstatic.net/1000025647/product/salvatore-ferragamo-signorina-misteriosa_b6d247ec38a34f97b3e2067a9b6b1982.jpg"
+    },
+    {
+      "ten": "Le Male Le Parfume EDT",
+      "thuonghieu": "Jean Paul Gaultier",
+      "gia": 2950000,
+      "phongcach": "Gợi cảm, cổ điển, mạnh mẽ",
+      "dungtich": "125ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://bizweb.dktcdn.net/100/335/381/products/tapis-7-9b62e1ae-4796-44a3-9d98-50aacb1cfa5b.png?v=1688460219627"
+    },
+    {
+      "ten": "Ultra Male",
+      "thuonghieu": "Jean Paul Gaultier",
+      "gia": 2880000,
+      "phongcach": "Gợi cảm, Ngọt Ngào, Quyến rũ",
+      "dungtich": "125ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://clmensstore.com/wp-content/uploads/2021/03/Ultra-Male-Jean-Paul-Gaultier%E2%80%93EDT.png"
+    },
+    {
+      "ten": "Spicebomb",
+      "thuonghieu": "Viktor & Rolf",
+      "gia": 3690000,
+      "phongcach": "Mạnh mẽ, cay nồng, quyến rũ",
+      "dungtich": "90ml",
+      "xuatsu": "Hà Lan",
+      "gioitinh": "Nam",
+      "image": "https://bizweb.dktcdn.net/100/335/381/products/qua-sung-5.png?v=1653538706443"
+    },
+    {
+      "ten": "Hugo Boss Bottled",
+      "thuonghieu": "Hugo Boss",
+      "gia": 3000000,
+      "phongcach": "Tươi mới, nam tính, cổ điển",
+      "dungtich": "100ml",
+      "xuatsu": "Đức",
+      "gioitinh": "Nam",
+      "image": "https://missi.com.vn/wp-content/uploads/2016/02/Hugo-Boss-Bottled.jpg"
+    },
+    {
+      "ten": "Parfums De Marly Delina",
+      "thuonghieu": "Parfums De Marly",
+      "gia": 6350000,
+      "phongcach": "Ngọt ngào, Sang Trọng, Quyến rũ",
+      "dungtich": "75ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://product.hstatic.net/200000150709/product/1_00125fe8cbb94300b07456812fdb90cb.png"
+    },
+    {
+      "ten": "Parfums de Marly Delina Exclusif",
+      "thuonghieu": "Parfums De Marly",
+      "gia": 6650000,
+      "phongcach": "Nữ tính, Quyến rũ, Nổi bật, Sang trọng",
+      "dungtich": "75ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://cendila.com/wp-content/uploads/2021/11/N%C6%B0%E1%BB%9Bc-hoa-n%C6%B0%CC%83-Parfums-de-Marly-Delina-Exclusif.jpg"
+    },
+    {
+      "ten": "Creed Aventus",
+      "thuonghieu": "Creed",
+      "gia": 8800000,
+      "phongcach": "Quyền lực, Nam tính, Hấp dẫn, Tinh tế",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://classic.vn/wp-content/uploads/2020/03/nuoc-hoa-creed-aventus.jpeg"
+    },
+    {
+      "ten": "Creed Viking Cologne",
+      "thuonghieu": "Creed",
+      "gia": 7900000,
+      "phongcach": "Nam tính , Hấp dẫn, Phóng khoáng",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://product.hstatic.net/1000340570/product/viking-colo_4a524ddd5f7d4e19aa65d749010f17e0_master.jpg"
+    },
+    {
+      "ten": "Creed Spring Flower",
+      "thuonghieu": "Creed",
+      "gia": 6850000,
+      "phongcach": "Sang trọng, Sành điệu, Nữ tính",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://nuochoarosa.com/wp-content/uploads/2018/05/Creed-Spring-Flower-2.jpg"
+    },
+    {
+      "ten": "Tom Ford Oud Wood",
+      "thuonghieu": "Tomford",
+      "gia": 4800000,
+      "phongcach": "Gỗ trầm, sang trọng, gợi cảm",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Nam",
+      "image": "https://fraluxperfume.com/wp-content/uploads/2021/05/tom-ford-oud-wood-100ml-edp-fralux-perfume.jpg"
+    },
+    {
+      "ten": "Tom Ford Café Rose EDP",
+      "thuonghieu": "Tomford",
+      "gia": 4200000,
+      "phongcach": "Cuốn hút, Nữ tính, Quyến rũ",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Unisex",
+      "image": "https://nuochoamc.com/upload/images/san-pham/1201/tom-ford-cafe-rose-edp-100ml6.webp"
+    },
+    {
+      "ten": "Maison Francis Kurkdjian Baccarat Rouge 540 Extrait",
+      "thuonghieu": "Maison Francis Kurkdjian",
+      "gia": 23000000,
+      "phongcach": "Cuốn hút, Sang trọng, Tinh tế",
+      "dungtich": "200ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Unisex",
+      "image": "https://fraluxperfume.com/wp-content/uploads/2024/05/Baccarat-Rouge-540_extrait_parfum.jpg"
+    },
+    {
+      "ten": "Maison Francis Kurkdjian Gentle Fluidity Gold EDP",
+      "thuonghieu": "Maison Francis Kurkdjian",
+      "gia": 5790000,
+      "phongcach": "Độc đáo, Ấn tượng, Hấp dẫn",
+      "dungtich": "70ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Unisex",
+      "image": "https://product.hstatic.net/200000561331/product/anh_chup_man_hinh_2024-09-19_luc_12.10.28_0cc2a3155dea418bbb7690c87422a06f_master.png"
+    },
+    {
+      "ten": "Maison Francis Kurkdjian Baccarat Rouge 540 EDP",
+      "thuonghieu": "Maison Francis Kurkdjian",
+      "gia": 11500000,
+      "phongcach": "Ấn tượng, Sang trọng, Thu hút",
+      "dungtich": "200ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Unisex",
+      "image": "https://product.hstatic.net/1000340570/product/baccarat-rouge-540-eau-de-parfum_e859e58b8f184db382e187930efc9f0d_master.jpg"
+    },
+    {
+      "ten": "Roja Parfums Elysium Pour Femme EDP",
+      "thuonghieu": "Roja",
+      "gia": 7500000,
+      "phongcach": "Cuốn hút, Sang trọng, Tinh tế",
+      "dungtich": "75ml",
+      "xuatsu": "Anh",
+      "gioitinh": "Nữ",
+      "image": "https://vilip.vn/wp-content/uploads/2024/05/Nuoc-Hoa-Nu-Roja-Parfums-Elysium-Pour-Femme-6.png"
+    },
+    {
+      "ten": "Roja Haute Luxe",
+      "thuonghieu": "Roja",
+      "gia": 55000000,
+      "phongcach": "Đẳng cấp, Cuốn hút, Sang trọng",
+      "dungtich": "100ml",
+      "xuatsu": "Anh",
+      "gioitinh": "Unisex",
+      "image": "https://vilip.vn/wp-content/uploads/2023/04/Nuoc-Hoa-Roja-Parfums-Haute-Luxe-1.jpg"
+    },
+    {
+      "ten": "Roja Parfum Isola Blu Parfum",
+      "thuonghieu": "Roja",
+      "gia": 13400000,
+      "phongcach": "Ấn tượng, Lôi cuốn, Sang trọng",
+      "dungtich": "100ml",
+      "xuatsu": "Anh",
+      "gioitinh": "Unisex",
+      "image": "https://clmensstore.com/wp-content/uploads/2023/08/Roja-Isola-Blu-parfum.jpg"
+    },
+    {
+      "ten": "Roja Reckless Parfum Pour Femme",
+      "thuonghieu": "Roja",
+      "gia": 6800000,
+      "phongcach": "Quý phái, Sang trọng, Say đắm",
+      "dungtich": "100ml",
+      "xuatsu": "Anh",
+      "gioitinh": "Nữ",
+      "image": "https://product.hstatic.net/200000201387/product/22_0350a8fa624c471fa281d5eb23cccb1b_master.jpg"
+    },
+    {
+      "ten": "Bvlgari Omnia Coral",
+      "thuonghieu": "Bvlgari",
+      "gia": 2300000,
+      "phongcach": "Nữ tính, Quý phái, Quyến rũ",
+      "dungtich": "65ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nữ",
+      "image": "https://mifashop.net/wp-content/uploads/2023/10/Bo-qua-tang-nuoc-hoa-Bvlgari-omnia-coral-Giftset-100ml-15ml-3.jpg"
+    },
+    {
+      "ten": "Bvlgari Le Gemme Kobraa EDP",
+      "thuonghieu": "Bvlgari",
+      "gia": 7500000,
+      "phongcach": "Cuốn hút, Lịch lãm, Nam tính",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://mcprod.hnak.com/media/catalog/product/v/d/vdmdf.jpg?quality=60&fit=bounds&height=&width="
+    },
+    {
+      "ten": "Bvlgari Man Black Cologne EDT",
+      "thuonghieu": "Bvlgari",
+      "gia": 1500000,
+      "phongcach": "Lịch lãm, Nam tính, Sexy",
+      "dungtich": "100ml",
+      "xuatsu": "Pháp",
+      "gioitinh": "Nam",
+      "image": "https://kenperfume.com/wp-content/uploads/2025/01/Bvlgari-Man-Black-Cologne-EDT-b.jpg"
+    },
+    {
+      "ten": "Calvin Klein Ck One Gold EDT",
+      "thuonghieu": "Calvin Klein",
+      "gia": 950000,
+      "phongcach": "Dễ chịu, Mát mẻ, Năng động, Nhẹ nhàng",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Unisex",
+      "image": "https://product.hstatic.net/1000025647/product/1536303610.8578_16b481d8f23549a2a28630db3fcd7884_1024x1024.jpg"
+    },
+    {
+      "ten": "Calvin Klein CK Be",
+      "thuonghieu": "Calvin Klein",
+      "gia": 600000,
+      "phongcach": "Dễ chịu, Lịch lãm, Nhẹ nhàng, Tinh tế",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Unisex",
+      "image": "https://bizweb.dktcdn.net/100/471/501/products/calvin-klein-ck-be-edt.png?v=1673929007597"
+    },
+    {
+      "ten": "Le Labo The Noir 29",
+      "thuonghieu": "Le Labo",
+      "gia": 7300000,
+      "phongcach": "Cuốn hút, Bí ẩn, Hấp dẫn",
+      "dungtich": "100ml",
+      "xuatsu": "Mỹ",
+      "gioitinh": "Unisex",
+      "image": "https://cdn.chiaki.vn/unsafe/0x960/left/top/smart/filters:quality(75)/https://chiaki.vn/upload/seller/1641438074-3.jpg"
+    }
+  ]
