@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý cửa hàng</title>
+    <link rel="stylesheet" href="/minh/styles.css">
+    <script src="/minh/scripts/pageChange.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="align-left">
+        <button onclick="goToPage('')">Quay lại trang chủ</button>
+    </div>
+    <div>
+        <h1>Quản lý cửa hàng</h1>
+    </div>
+
+</header>
+
+<div class="main-body">
+    <nav class="sidebar">
+
+        <ul>
+            <li>
+                <a href="/manage/products">Danh sách sản phẩm</a>
+            </li>
+            <li>
+                <a href="/manage/accounts">Danh sách tài khoản</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <%- include(contentToInclude) %>
+    </main>
+</div>
+
+<footer class="">
+
+</footer>
+
+</body>
+</html>

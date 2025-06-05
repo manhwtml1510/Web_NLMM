@@ -1,0 +1,39 @@
+<div class="header">
+    <h2>Danh sách sản phẩm</h2>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Thương hiệu</th>
+        <th>Giá</th>
+        <th>Mô tả</th>
+        <th>Dung tích(ml)</th>
+        <th>Xuất sứ</th>
+        <th>Giới tính</th>
+        <th>Tồn kho</th>
+        <th>Hành dộng</th>
+    </tr>
+    <% data.forEach((product) => { %>
+        <tr>
+            <td><%= product.id %></td>
+            <td><%= product.name %></td>
+            <td><%= product.brand %></td>
+            <td><%= product.price %></td>
+            <td><%= product.style %></td>
+            <td><%= product.capacity %></td>
+            <td><%= product.origin %></td>
+            <td><%= product.gender %></td>
+            <td><%= product.quantity %></td>
+            <td>
+                <a href="/manage/products/edit/<%= product.id %>" >sửa</a>
+                <a href="/manage/products/delete/<%= product.id %>">xóa</a>
+            </td>
+        </tr>
+    <% }); %>
+
+</table>
+
+<button onclick="goToPage('manage/products/add')">Thêm mới</button>
