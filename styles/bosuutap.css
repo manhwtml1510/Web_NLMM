@@ -45,7 +45,7 @@ body {
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     margin-bottom: 20px;
-    height: 380px; 
+    height: 390px; 
     display: flex;
     flex-direction: column;
 }
@@ -77,7 +77,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    height: 40%;
+    height: 50%;
     text-align: center;
 }
 
@@ -92,6 +92,40 @@ body {
     margin: 10px;
     color: red;
 }
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.cart-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #be0d0d;
+}
+
+.cart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.cart-button:hover {
+    background-color: #cc9d9d;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
 .menu-list-category {
     display: flex;
     flex-direction: column;

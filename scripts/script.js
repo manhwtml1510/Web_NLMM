@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener("click", function (e) {
+    const target = e.target.closest("[data-page]");
+    if (target) {
+        e.preventDefault(); // Chặn chuyển trang mặc định
+        const page = target.getAttribute("data-page");
+        loadPage(page); // Gọi hàm loadPage với tên trang
+    }
+});
+
 function loadPage(page) {
     const mainContent = document.getElementById('main-content');
 
