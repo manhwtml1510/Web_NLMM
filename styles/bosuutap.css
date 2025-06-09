@@ -2,8 +2,6 @@ body {
     font-family: "Didot", serif;
 }
 
-
-
 .content-container {
     background-color: rgb(255, 255, 255);
     min-height: 50vw;
@@ -14,10 +12,6 @@ body {
 }
 
 
-
-
-
-
 .list-product {
     text-align: left;
     width: calc(18% - 20px);
@@ -25,7 +19,6 @@ body {
     border-right: 1px solid rgb(0, 0, 0);
     font-size: 20px;
 }
-
 
 
 .product-cart-container {
