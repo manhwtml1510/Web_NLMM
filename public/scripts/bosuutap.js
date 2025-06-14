@@ -7,7 +7,7 @@ console.log(productLocal)
 function renderListProduct(productList) {
     const productHtmls = productList.map((product) => {
         return `
-        <div class="product-cart">
+        <li class="product-cart" onclick="loadProducts(${product.id})">
             <div class="cart-image">
                 <a href="#">
                     <img src=../images/products/${product.id}.png alt="">
@@ -20,7 +20,7 @@ function renderListProduct(productList) {
                 <h4 class="cart-depict">${product.style}</h4>
                 <p class="cart-price">${Number(product.price).toLocaleString('vi-VN')} vnđ</p>
             </div>
-        </div>
+        </li>
         `
     })
 
@@ -88,3 +88,37 @@ function setupFilterButtons() {
 }
 
 loadPage()
+
+
+// Xem chi tiết từng sản phẩm
+let this_product
+function loadProducts(id) {
+    this_product = allProducts.find(product => product.id === id);
+    document.getElementById('main-content').innerHTML = `
+
+        <section class="title-bar">
+            <h1 id="title">${this_product.name}</h1>
+        </section>
+        
+        <section class="flex-box">
+            <div class="box-image">
+                <img src=../images/products/${this_product.id}.png alt="">
+            </div>
+            <div class="box-content">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <h2>Tên sản phẩm: ${this_product.name}</h2>
+                <br><br>
+                <h2>${this_product.price} VND</h2>
+                <br><br>
+                <h3>Xuất sứ: ${this_product.origin}</h3>
+                <br><br>
+                <h3>Dung tích: ${this_product.capacity} ml</h3>
+                <br><br><br>
+                <h3>Phong cách: ${this_product.style}</h3>
+                <br><br>
+                <button class="button">Mua ngay</button>
+            </div>
+        </section>
+
+    `
+}

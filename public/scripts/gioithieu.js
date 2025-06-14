@@ -2,28 +2,28 @@ const members = [
     {
     name: "Phạm Văn Minh",
     birthday: "29/08/2005",
-    desc: "Phạm Văn Minh: Giám đốc công ty."
+    desc: "Giám đốc công ty."
     },
     {
     name: "Phạm Hữu Linh",
     birthday: "23/03/2006",
-    desc: "Phạm Hữu Linh: Trợ lý giám đốc."
+    desc: "Trợ lý giám đốc."
     },
     {
     name: "Nguyễn Đình Đức Mạnh",
     birthday: "15/10/2006",
-    desc: "Nguyễn Đình Đức Mạnh: Nhân viên xuất sắc nhất năm."
+    desc: "Nhân viên xuất sắc nhất năm."
     },
     {
     name: "Trần Đình Nhân",
     birthday: "17/12/2006",
-    desc: "Trần Đình Nhân: Siêu lao công."
+    desc: "Siêu lao công."
     }
 ];
 function showInfo(index) {
-    const infoBox = document.getElementById("member-info");
-    document.getElementById("member-name").textContent = members[index].name;
-    document.getElementById("member-birthday").textContent = "Ngày sinh: " + members[index].birthday;
-    document.getElementById("member-description").textContent = members[index].desc;
-    infoBox.style.display = "block";
+    document.getElementById("content").innerHTML = `
+        <h2 class="f28">${members[index].name}</h2><br>
+        <p class="f20"><strong>Ngày sinh:</strong> ${members[index].birthday}</p><br>
+        <p class="f20"><strong>Chức vụ:</strong> ${members[index].desc}</p>
+    `;
 }

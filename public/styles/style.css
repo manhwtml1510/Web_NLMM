@@ -1,109 +1,185 @@
-body {
-    padding: 0 0;
+* {
     margin: 0 0;
+    padding: 0 0;
     justify-content: space-evenly;
-}
-
-
-.header {
-    background-color: rgba(250, 250, 250, 0.2);
-    max-width: 100vw;
-    padding: 10px 0;
+    max-width: 100%;
+    max-height: 100%;
+    list-style-type: none;
+    border: none;
+    align-items: center;
     text-align: center;
+}
+
+body {
+    max-width: 100vw;
+}
+
+/* Bố cục chung */
+.container {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-bottom: 1px solid rgba(30,30,30,0.2);
+    max-width: 100%;
+    flex-wrap: wrap;
 }
-
-.header-main{
-    align-items: center;
-    width: 98vw;
+.main-content{
     display: flex;
-    justify-content: space-between;
+    align-items: stretch;
 }
-
-.header-main .heafer-logo {
-    width: 15vw;
-}
-
-.heafer-logo a{
-    font-family: Papyrus, sans-serif ;
-    font-size: clamp(20px, 3vw, 52px)
-}
-
-.header-main .header-menu {
-    width: 55vw;
-    height: 100%;
-    padding: 15px 1vw;
-    margin: 0 1vw;
-    display: flex;
-    list-style-type: none;
-    align-items: center;
-}
-
-.header-main .header-menu .menu-chinh {
+.full-width {
     width: 100%;
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-    font-size: 24px;
-    padding: 0;
-    margin: 0;
 }
-.menu-chinh li a {
-    gap: 30px;
+
+.width50 {
+    width: 50%;
+    max-width: 50%;
+}
+
+.width10{
+    width: 10%;
+}
+
+.width60 {
+    width: 60%;
+}
+
+.width20{
+    width: 20%;
+}
+.width70{
+    width: 70%;
+}
+
+
+.width85{
+    width: 85%;
+}
+
+.body {
+    min-height: 50vw;
+}
+
+.form-1 {
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    padding: 15px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin: 10px 0;
+}
+.form-2 {
+    border: 2px solid #CCC;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.scroll{
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+
+
+.button {
+    background-color: #000000;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #2cad04;
+}
+
+.right-bar {
+    overflow-y: auto;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-bar {
+    width: 20%;
+    overflow-y: auto;
+}
+
+.title {
+    font-size: clamp(32px, 2vw,64px);
+    font-family: "Didot", serif ;
+    margin: 20px 0;
+}
+
+.title-bar {
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    background-color: rgb(250,250,250);
+    min-height: 30vw;
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.line {
+    margin: 30px 0;
+    text-align: left;
+}
+
+/* Đầu trang */
+.header {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+}
+
+
+
+
+#logo {
+    font-family: Papyrus, sans-serif ;
+    font-size: clamp(28px, 3vw, 52px)
+}
+
+
+.nav-text {
     text-decoration: none;
     color: black;
-    font-size: clamp(12px, 3vw, 20px);
+    font-size: clamp(10px, 3vw, 22px);
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s;
 }
-
-.menu-chinh li a:hover {
+.b-hover-yellow:hover {
+    background-color: rgba(255,255,50,0.2);
+}
+.hover-red:hover {
     color: red;
 }
 
-.header-main .header-action {
-    width: 20vw;
-    display: flex;
-    padding: 15px 10px;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.action-search{
-    width: 10vw;
-    padding: 15px 10px;
-}
-@media (max-width: 768px) {
-    .action-search{
-        display: none;
-    }
-}
-
-
-.search-box{
-    display: inline;
-    width: 70%;
-    background-color: white;
-    border: 2px solid #CCC;
-    border-radius: 30px;
-    padding: 15px 10px;
-}
-.search-box .search {
-    padding: 15px 0;
-    border: none;
-}
-.search-box .search input[type="search"]{
-    border: none;
+.search {
     outline: none;
-    width: 90%;
-    height: 100%;
-    font-size: 18px;
 }
 
+/* Nút bấm */
 .action-button{
     background: none;
     margin: 0 10px;
@@ -114,53 +190,84 @@ body {
     background: rgba(255,0,0,0.1);
     border-radius: 20px;
 }
-
 .icon{
-    width: clamp(28px, 2vw, 40px);
-    height: clamp(28px, 2vw, 40px);
-}
-
-.main{
-    background-color: rgb(250, 250, 250);
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    overflow: auto;
-    overflow-y:scroll;
-}
-
-.title-bar {
-    margin: 60px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#title {
-    font-size: clamp(32px, 2vw,64px);
-    font-family: "Didot", serif ;
-}
-
-.content-container{
-    background-color: rgb(250,250,250);
-    min-height: 50vw;
-    display: flex;
-}
-
-.left-bar{
-    width: 25vw;
-    text-align: center;
-    align-items: center;
-    border-right: 1px solid black;
-}
-
-.right-bar{
-    width: 75vw;
-    text-align: center;
+    width: clamp(35px, 2vw, 50px);
+    height: clamp(35px, 2vw, 50px);
 }
 
 
-.footer{
 
+/* Ô tìm kiếm */
+.header-search {
+    width: 10vw;
+}
+
+
+.label {
+    width: 90%;
+    text-align:left;
+}
+.search{
+    text-align:left;
+    width: 100%;
+}
+
+/* Ẩn khi màn hình bé*/
+@media (max-width: 800px) {
+    .mobile-hidden{
+        display: none;
+    }
+}
+
+
+.product-img {
+    width: 90%;
+    max-width: 90%;
+    aspect-ratio: 1 /1;
+}
+
+.product-img:hover {
+    transform: scale(1.1);
+}
+
+.product-card{
+    margin: 1vw 1vw;
+    width: 15%;
+    max-width: 15%;
+    aspect-ratio: 1 / 1.6;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(250, 250, 254);
+}
+@media (max-width: 1400px) {
+    .product-card{
+        width: 40%;
+        max-width: 40%;
+
+    }
+
+    .h40v {
+        min-height: 80vw;
+    }
+
+}
+.product-content{
+    height: 35%;
+    max-height: 35%;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(7px, 1vw, 16px);
+}
+
+.h40v {
+    max-height: 40vw;
+}
+/* Font */
+
+.f20 {
+    font-size: clamp(12px, 2vw,20px);
+}
+
+.f28 {
+    font-size: clamp(18px, 2vw,28px);
 }
