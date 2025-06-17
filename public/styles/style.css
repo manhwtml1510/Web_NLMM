@@ -8,6 +8,8 @@
     border: none;
     align-items: center;
     text-align: center;
+    text-decoration: none;
+    color: black;
 }
 
 body {
@@ -161,8 +163,6 @@ body {
 
 
 .nav-text {
-    text-decoration: none;
-    color: black;
     font-size: clamp(10px, 3vw, 22px);
     text-transform: uppercase;
     letter-spacing: 1px;

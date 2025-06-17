@@ -37,28 +37,63 @@ function HienThiSanPham(data) {
 
 
 // Trang cá nhân
-function LoadTrangCaNhan() {
+function LoadTrangCaNhan(update = false) {
     fetch('user-data/thong-tin-tai-khoan')
         .then(res => res.json())
         .then(data => {
+            if (update) {
+                FormDoiThongTin(data)
+            } else {
             HienThiTrangCaNhan(data)
+            }
         })
         .catch(error => {
-            console.error(error);
+            changeURL('/dang-nhap')
         });
 }
 function HienThiTrangCaNhan(data) {
     let userInfo = document.getElementById('content');
     userInfo.innerHTML = `
         <h2>Thông tin cá nhân</h2>
+        <br>
         <p>Tên: ${data.ten_nguoi_dung}</p>
-        <p>Số dư tài khoản: ${data.so_du}</p>
+        <p>Số dư tài khoản: ${data.so_du.toLocaleString('vi-VN')} VND</p>
         <p>Email: ${data.email}</p>
         <p>Số điện thoại: ${data.so_dien_thoai}</p>
         <p>Địa chỉ: ${data.dia_chi}</p>
-        <button class="button" onclick="changeURL('/cap-nhat-thong-tin')">Cập nhật thông tin</button>
+        <button class="button" onclick="LoadTrangCaNhan(true)">Cập nhật thông tin</button>
     `;
 }
+
+function FormDoiThongTin(data) {
+    let userInfo = document.getElementById('content');
+    userInfo.innerHTML = `
+        <h2>Thông tin cá nhân</h2>
+        <br>
+        <div class="container full-width">
+            <form class="width85" action="/user-data/cap-nhat-tai-khoan" method="POST">
+            <label class="f20">Tên:</label>
+            <br>
+            <input class="form-2 width60" name="ten_tai_khoan" type="text" value="${data.ten_nguoi_dung}">
+            <br>
+            <label class="f20">Email:</label>
+            <br>
+            <input class="form-2 width60" name="email" type="text" value="${data.email}">
+            <br>
+            <label class="f20">Số điện thoại: </label>
+            <br>
+            <input class="form-2 width60" name="so_dien_thoai" type="text" value="${data.so_dien_thoai}">
+            <br>
+            <label class="f20">Địa chỉ: </label>
+            <br>
+            <input class="form-2 width60" name="dia_chi" type="text" value="${data.dia_chi}">
+            <br><br>
+            <button class="button" type="submit"">Xác nhận</button>
+        </form>
+        </div>
+    `;
+}
+
 
 
 
@@ -93,6 +128,9 @@ function HienThiGioHang(data) {
                 <div class="width50">
                     <p class="f28">${item.ten_san_pham}</p>
                 </div>
+                <div class="width10">
+                    <p class="f28">${item.gia_ban.toLocaleString('vi-VN')} VND</p>
+                </div>
                 <div class="width20">
                     <button class="f28 button" onclick="CapNhatSoLuong(${item.id_san_pham},(${item.so_luong_san_pham} -1))">-</button>
                     <a class="f28 form-2">${item.so_luong_san_pham}</a>
@@ -104,8 +142,10 @@ function HienThiGioHang(data) {
             <li>
         `;
         }
-
     });
+    let tongTien = data.reduce((tong, item) => tong + (item.gia_ban * item.so_luong_san_pham), 0);
+
+    gioHang.innerHTML += `<p class="f28">Tổng tiền: ${tongTien.toLocaleString('vi-VN')} VND</p>`;
 }
 function CapNhatSoLuong(idSanPham, thayDoi) {
     fetch('user-data/cap-nhat-so-luong', {
@@ -128,6 +168,29 @@ function CapNhatSoLuong(idSanPham, thayDoi) {
             console.error('Lỗi cập nhật:', error);
         });
 
+}
+
+function ThemVaoGioHang(idSanPham) {
+    fetch('/user-data/them-vao-gio-hang', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id_san_pham: idSanPham })
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+            } else {
+                if (confirm('Hãy đăng nhập để thêm sản phẩm vào giỏ hàng.')) {
+                    changeURL('/dang-nhap');
+                }
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        });
 }
 
 

@@ -19,17 +19,17 @@
         <th>Tồn kho</th>
         <th>Hành dộng</th>
     </tr>
-    <% listProducts.forEach((product) => { %>
+    <% data.forEach((product) => { %>
         <tr>
-            <td><%= product.id %></td>
-            <td><%= product.name %></td>
-            <td><%= product.brand %></td>
-            <td><%= product.price %></td>
-            <td><%= product.style %></td>
-            <td><%= product.capacity %></td>
-            <td><%= product.origin %></td>
-            <td><%= product.gender %></td>
-            <td><%= product.quantity %></td>
+            <td><%= product.id_san_pham %></td>
+            <td><%= product.ten_san_pham %></td>
+            <td><%= product.thuong_hieu %></td>
+            <td><%= product.gia_ban %></td>
+            <td><%= product.mo_ta %></td>
+            <td><%= product.dung_tich %></td>
+            <td><%= product.xuat_su %></td>
+            <td><%= product.phan_loai %></td>
+            <td><%= product.ton_kho %></td>
             <td>
                 <a href="/manage/products/edit/<%= product.id %>" >sửa</a>
                 <a>xóa</a>
