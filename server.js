@@ -36,7 +36,7 @@ app.use('/user-data', user_data);
 app.use('/shop-data', shop_data);
 app.use('/tai-khoan', account_router);
 
-app.use('/manage', admin_router);
+app.use('/nhan-vien', admin_router);
 app.use('/', main_router);
 
 

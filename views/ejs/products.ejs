@@ -1,12 +1,7 @@
-<style>
-    table, th, td {
-        border:1px solid black;
-    }
-</style>
 
 <h2>Danh sách sản phẩm</h2>
 
-<table style="width:100%">
+<table class="table-1">
     <tr>
         <th>ID</th>
         <th>Tên</th>
@@ -31,7 +26,7 @@
             <td><%= product.phan_loai %></td>
             <td><%= product.ton_kho %></td>
             <td>
-                <a href="/manage/products/edit/<%= product.id %>" >sửa</a>
+                <a href="/manage/products/edit/<%= product.id_san_pham %>" >sửa</a>
                 <a>xóa</a>
             </td>
         </tr>
