@@ -1,7 +1,6 @@
 const express = require('express');
 const pool = require("../config/db");
 const path = require("path");
-const {route} = require("express/lib/application");
 const router = express.Router()
 
 
@@ -21,7 +20,7 @@ router.get('/:page', (req, res) => {
 router.get('/san-pham/:id', async (req, res) => {
     const id = req.params.id;
     let [rows] = await pool.query('SELECT * FROM `san_pham` WHERE `id_san_pham` = ?', [id]);
-    res.render('ejs/main_layout.ejs', {
+    res.render('ejs/index.ejs', {
         contentToInclude: 'san-pham.ejs',
         sam_pham: rows[0]
     })

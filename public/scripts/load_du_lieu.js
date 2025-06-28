@@ -17,17 +17,17 @@ function HienThiSanPham(data) {
     listProduct.innerHTML = ``
     data.forEach(sanPham => {
         listProduct.innerHTML += `
-    <li class="product-card width20" onclick="changeURL('/san-pham/${sanPham.id_san_pham}')">
-            <div class="">
+    <li class="product-card width20">
+            <div class="" onclick="changeURL('/san-pham/${sanPham.id_san_pham}')">
                 <br>
                 <a>
                     <img class="product-img " src="../images/products/${sanPham.id_san_pham}.png" alt="">
                 </a>
             </div>
-            <div class="hover-red product-content">
+            <div class="product-content">
             <br>
-                <h3 class="">${sanPham.ten_san_pham}</h3><br>
-                <p class="">${Number(sanPham.gia_ban).toLocaleString('vi-VN')} vnđ</p>
+                <h3 class="hover-red">${sanPham.ten_san_pham}</h3><br>
+                <p class="hover-red">${Number(sanPham.gia_ban).toLocaleString('vi-VN')} vnđ</p>
             </div>
         </li>
     `
@@ -48,6 +48,7 @@ function LoadTrangCaNhan(update = false) {
             }
         })
         .catch(error => {
+            console.error(error);
             changeURL('/dang-nhap')
         });
 }
@@ -63,6 +64,12 @@ function HienThiTrangCaNhan(data) {
         <p>Địa chỉ: ${data.dia_chi}</p>
         <button class="button" onclick="LoadTrangCaNhan(true)">Cập nhật thông tin</button>
     `;
+    if (data.vai_tro !== 'Khách hàng') {
+        userInfo.innerHTML += `<br><div class="form-1 b-hover-yellow" onclick="changeURL('/nhan-vien/selection')">
+            <p class="f20">Vào trang quản lí</p>
+        </div>`;
+    }
+
 }
 
 function FormDoiThongTin(data) {
@@ -190,6 +197,37 @@ function ThemVaoGioHang(idSanPham) {
         })
         .catch(error => {
             console.log(error)
+        });
+}
+
+
+function ThanhToan() {
+    fetch('user-data/gio-hang')
+        .then(res => res.json())
+        .then(data => {
+            if (data.length === 0) {
+                alert('Giỏ hàng của bạn hiện đang trống.');
+                return;
+            }
+            let tongTien = data.reduce((tong, item) => tong + (item.gia_ban * item.so_luong_san_pham), 0);
+            if (confirm(`Bạn có chắc chắn muốn thanh toán với tổng số tiền là ${tongTien.toLocaleString('vi-VN')} VND?`)) {
+                fetch('user-data/thanh-toan', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ tong_tien: tongTien })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        alert(data.message)
+                        loadGioHang();
+                    })
+
+            }
+        })
+        .catch(error => {
+            console.error(error);
         });
 }
 

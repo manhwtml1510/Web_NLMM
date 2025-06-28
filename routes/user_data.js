@@ -26,7 +26,6 @@ router.post('/cap-nhat-tai-khoan', async (req, res) => {
 
 
 
-
 router.get('/gio-hang', async (req, res) => {
     let [rows] = await pool.query('SELECT gio_hang.id_san_pham, san_pham.ten_san_pham, san_pham.gia_ban, gio_hang.so_luong_san_pham FROM `gio_hang` JOIN san_pham ON gio_hang.id_san_pham = san_pham.id_san_pham WHERE `id_tai_khoan` = ?',
         [req.session.user.id_tai_khoan]);
@@ -62,6 +61,32 @@ router.put('/cap-nhat-so-luong', async (req, res) => {
     }
     res.json({ success: true });
 })
+
+
+router.put('/thanh-toan', async (req, res) => {
+    const { tong_tien } = req.body;
+    let [gioHang] = await pool.query('SELECT * FROM `gio_hang` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
+
+    if (req.session.user.so_du < tong_tien) {
+        res.json({ success: false, message: 'Số dư không đủ để thanh toán' });
+        return;
+    }
+    req.session.user.so_du -= tong_tien;
+    const [invoiceResult] = await pool.query('INSERT INTO `hoa_don` (`id_khach_hang`) VALUES (?)', [req.session.user.id_tai_khoan]);
+    const idHoaDon = invoiceResult.insertId;
+
+    const promises = gioHang.map(item => {
+        return pool.query('INSERT INTO `hoa_don_chi_tiet` (`id_hoa_don`, `id_san_pham`, `so_luong`) VALUES (?, ?, ?)',
+            [idHoaDon, item.id_san_pham, item.so_luong_san_pham]);
+    });
+    await Promise.all(promises);
+
+
+    await pool.query('DELETE FROM `gio_hang` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
+    res.json({ success: true, message: 'Thanh toán thành công' });
+})
+
+
 
 
 module.exports = router;

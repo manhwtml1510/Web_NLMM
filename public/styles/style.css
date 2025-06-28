@@ -249,7 +249,13 @@ body {
     .h40v {
         min-height: 80vw;
     }
+}
 
+@media (max-width: 2320px) and (min-width: 1400px) {
+    .product-card {
+        width: 20%;
+        max-width: 20%;
+    }
 }
 .product-content{
     height: 35%;
@@ -270,4 +276,30 @@ body {
 
 .f28 {
     font-size: clamp(18px, 2vw,28px);
+}
+
+
+/* Bảng */
+
+.table-1 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-1 td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-1 tr:nth-child(even){background-color: #f2f2f2;}
+
+.table-1 tr:hover {background-color: #ddd;}
+
+.table-1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
 }

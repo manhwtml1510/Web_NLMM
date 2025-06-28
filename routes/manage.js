@@ -4,29 +4,26 @@ const requireRole = require('../middleware/auth');
 const router = express.Router()
 
 
-router.use(requireRole(['Nhân viên', 'Quản lí']));
+router.use(requireRole(['Nhân viên', 'Quản lý']));
 
-router.get('/products', async  (req,res) => {
-    let[rows] = await  pool.    query('SELECT * FROM `san_pham`')
-    res.render('ejs/main_layout.ejs', {
-        contentToInclude:'products.ejs',
-        data: rows
-
-    })
-})
-
-router.get('/accounts', async  (req,res) => {
-    let[rows] = await  pool.query('SELECT * FROM `accounts`')
-    res.render('/admin-views/layout.ejs', {
-        contentToInclude:'accounts',
-        data: rows
-
+router.get('/selection', async (req, res) => {
+    res.render('/ejs/index.ejs', {
+        contentToInclude:'action_select.ejs',
     })
 })
 
 
+router.get('/tao-hoa-don' , async (req, res) => {
+    res.render('/ejs/index.ejs', {
+        contentToInclude:'invoice_form.ejs',
+    })
+})
+
+router.post('/tao-hoa-don', async (req, res) => {
+    const { customerName, customerEmail, productId, quantity } = req.body;
 
 
+});
 
 
 module.exports = router;
