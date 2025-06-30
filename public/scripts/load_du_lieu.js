@@ -101,6 +101,24 @@ function FormDoiThongTin(data) {
     `;
 }
 
+function NapTien() {
+    let tien = prompt('Nhập số tiền bạn muốn nạp vào tài khoản:', '0')
+    fetch('user-data/nap-tien', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ so_tien: Number(tien) })
+    })
+        .then(res=> res.json())
+        .then(data => {
+            alert(data.message);
+            LoadTrangCaNhan()
+        })
+    .catch(error => {console.log(error)})
+
+}
+
 
 
 
@@ -230,8 +248,6 @@ function ThanhToan() {
             console.error(error);
         });
 }
-
-
 
 
 

@@ -75,17 +75,27 @@ router.put('/thanh-toan', async (req, res) => {
     const [invoiceResult] = await pool.query('INSERT INTO `hoa_don` (`id_khach_hang`) VALUES (?)', [req.session.user.id_tai_khoan]);
     const idHoaDon = invoiceResult.insertId;
 
-    const promises = gioHang.map(item => {
-        return pool.query('INSERT INTO `hoa_don_chi_tiet` (`id_hoa_don`, `id_san_pham`, `so_luong`) VALUES (?, ?, ?)',
-            [idHoaDon, item.id_san_pham, item.so_luong_san_pham]);
-    });
-    await Promise.all(promises);
-
+    for (const item of gioHang) {
+        await pool.query(
+            'INSERT INTO `hoa_don_chi_tiet` (`id_hoa_don`, `id_san_pham`, `so_luong`) VALUES (?, ?, ?)',
+            [idHoaDon, item.id_san_pham, item.so_luong_san_pham]
+        );
+    }
 
     await pool.query('DELETE FROM `gio_hang` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
     res.json({ success: true, message: 'Thanh toán thành công' });
 })
 
+router.put('/nap-tien', async (req, res) => {
+    const { so_tien } = req.body;
+    if (so_tien <= 0) {
+        res.json({ success: false, message: 'Số tiền nạp không hợp lệ' });
+        return;
+    }
+    req.session.user.so_du += so_tien;
+    await pool.query('INSERT INTO `nap_tien` (`id_tai_khoan`, `so_tien`) VALUES (?, ?);', [req.session.user.id_tai_khoan, so_tien]);
+    res.json({ success: true, message: 'Nạp tiền thành công' });
+})
 
 
 
