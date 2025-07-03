@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.use(requireRole(['Quản lý']));
 
-router.get('/:page', async (req, res) => {
+router.get('/cua_hang', async (req, res) => {
     res.render('ejs/index.ejs', {
         contentToInclude:'manage_layout.ejs',
     })

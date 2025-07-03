@@ -6,10 +6,10 @@
     <div class="left-bar">
         <div class="scroll h40v">
             <h2 class="f28">Bảng dữ liệu</h2>
-            <div class="card b-hover-yellow" onclick="">
+            <div class="card b-hover-yellow" onclick="sanPhamManager.LayDuLieu()">
                 <p class="f20">Sản Phẩm</p>
             </div>
-            <div class="card b-hover-yellow" onclick="">
+            <div class="card b-hover-yellow" onclick="taiKhoanManager.LayDuLieu()">
                 <p class="f20">Tài khoản</p>
             </div>
             <div class="card b-hover-yellow" onclick="">
@@ -33,10 +33,23 @@
 
 
     <div class="right-bar">
-        <table class="" id="">
+
+        <table class="table-1" id="manageTable">
 
         </table>
+        <br><br>
+        <button id="addRow" class="button">Thêm mới</button>
     </div>
 
 
 </section>
+
+<div id="dataForm" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <h2>Nhập thông tin</h2>
+        <form id="">
+
+        </form>
+    </div>
+</div>
