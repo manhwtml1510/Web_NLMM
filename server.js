@@ -6,7 +6,8 @@ const session = require('express-session')
 
 
 const shop_data = require('./routes/shop_data')
-const manage_router = require('./routes/manage_data')
+const manage_data_router = require('./routes/manage_data')
+const manage_router = require('./routes/manage')
 const staff_router = require('./routes/staff')
 const main_router = require('./routes/main')
 const account_router = require('./routes/tai_khoan')
@@ -35,6 +36,7 @@ app.use(session({
 
 app.use('/user-data', user_data);
 app.use('/shop-data', shop_data);
+app.use('/manage-data', manage_data_router);
 app.use('/tai-khoan', account_router);
 app.use('/quan-ly-du-lieu', manage_router);
 app.use('/nhan-vien', staff_router);
