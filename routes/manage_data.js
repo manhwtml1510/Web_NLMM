@@ -18,12 +18,17 @@ router.get('/:tableName', async  (req, res) => {
 router.post('/:tableName', async (req, res) => {
     const tableName = req.params.tableName;
     const data = req.body;
+    console.log(data)
 
     const columns = Object.keys(data).map(key => `\`${key}\``).join(', ');
-    const values = Object.values(data).map(value => `'${value}'`).join(', ');
-    const placeholders = columns.map(() => '?').join(', ');
-
-    await pool.query(`INSERT INTO \`${tableName}\` (${columns.join(',')}) VALUES (${placeholders})`, values);
+    console.log(columns)
+    const values = Object.values(data)
+    console.log(values)
+    const placeholders =  Object.keys(data).map(key => '?').join(', ');
+    console.log(placeholders)
+    const sql = `INSERT INTO \`${tableName}\` (${columns}) VALUES (${placeholders})`
+    console.log(sql)
+    await pool.query(sql ,values );
 
 
 });
@@ -54,6 +59,16 @@ router.delete('/:tableName/:PKname/:PK', async (req, res) => {
     res.json({ success: true, message: 'Xóa thành công' });
 
 });
+
+router.delete ('/:tableName/:PK1name/:PK1/:PK2name/:PK2', async (req, res) => {
+    const tableName = req.params.tableName;
+    const PK1name = req.params.PK1name;
+    const PK1 = parseInt(req.params.PK1);
+    const PK2name = req.params.PK2name;
+    const PK2 = parseInt(req.params.PK2);
+    await pool.query(`DELETE FROM \`${tableName}\` WHERE ${PK1name} = ? AND ${PK2name} = ?`, [PK1, PK2]);
+    res.json({ success: true, message: 'Xóa thành công' });
+})
 
 
 

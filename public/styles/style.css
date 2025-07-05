@@ -110,6 +110,8 @@ body {
 .right-bar {
     overflow-y: auto;
     width: 70%;
+    min-height: 43vw;
+    max-height: 43vw;
     display: flex;
     flex-wrap: wrap;
 }
