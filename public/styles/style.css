@@ -322,7 +322,7 @@ body {
 /* Nội dung modal */
 .modal-content {
     background-color: #fff;
-    margin: 10% auto; /* Canh giữa theo chiều ngang + 10% lề trên */
+    margin: 18% auto; /* Canh giữa theo chiều ngang + 10% lề trên */
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Độ rộng modal */
