@@ -11,6 +11,9 @@ router.get('/partial/:page', (req, res) => {
     res.sendFile(filePath);
 });
 
+router.get('/', (req, res) => {
+    res.redirect('/trang-chu');
+})
 
 router.get('/:page', (req, res) => {
     res.sendFile(path.join(__dirname, `../views/html/index.html`))
