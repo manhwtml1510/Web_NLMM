@@ -77,7 +77,6 @@ router.get('/:tableName/:PK1name/:PK1/:PK2name/:PK2', async (req, res) => {
     if (rows.length === 0) {
         return res.status(404).json({ success: false, message: 'Không tìm thấy dữ liệu' });
     }
-    console.log(rows[0])
     res.json(rows[0]);
 })
 router.put('/:tableName/:PK1name/:PK1/:PK2name/:PK2', async (req, res) => {
