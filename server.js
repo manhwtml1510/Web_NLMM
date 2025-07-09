@@ -12,7 +12,7 @@ const staff_router = require('./routes/staff')
 const main_router = require('./routes/main')
 const account_router = require('./routes/tai_khoan')
 const user_data = require('./routes/user_data')
-
+const authRouter = require('./routes/auth');
 
 
 
@@ -23,8 +23,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/scripts', express.static(__dirname + '/public/scripts'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -33,7 +37,6 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-
 app.use('/user-data', user_data);
 app.use('/shop-data', shop_data);
 app.use('/manage-data', manage_data_router);
@@ -41,7 +44,8 @@ app.use('/tai-khoan', account_router);
 app.use('/quan-ly-du-lieu', manage_router);
 app.use('/nhan-vien', staff_router);
 app.use('/', main_router);
-
+app.use('/', authRouter);
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

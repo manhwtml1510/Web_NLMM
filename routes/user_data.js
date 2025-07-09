@@ -87,15 +87,24 @@ router.put('/thanh-toan', async (req, res) => {
 })
 
 router.put('/nap-tien', async (req, res) => {
-    const { so_tien } = req.body;
-    if (so_tien <= 0) {
-        res.json({ success: false, message: 'Số tiền nạp không hợp lệ' });
-        return;
+    try {
+        const { so_tien } = req.body;
+        const id = req.session.user?.id_tai_khoan;
+
+
+        if (!id || !so_tien || isNaN(so_tien)) {
+            return res.status(400).json({ message: 'Thiếu thông tin cần thiết!' });
+        }
+
+        await pool.query("UPDATE tai_khoan SET so_du = so_du + ? WHERE id_tai_khoan = ?", [so_tien, id]);
+
+        res.json({ message: 'Nạp tiền thành công!' });
+    } catch (err) {
+        console.error("Lỗi khi nạp tiền:", err);
+        res.status(500).json({ message: 'Lỗi server khi nạp tiền!' });
     }
-    req.session.user.so_du += so_tien;
-    await pool.query('INSERT INTO `nap_tien` (`id_tai_khoan`, `so_tien`) VALUES (?, ?);', [req.session.user.id_tai_khoan, so_tien]);
-    res.json({ success: true, message: 'Nạp tiền thành công' });
-})
+});
+
 
 
 

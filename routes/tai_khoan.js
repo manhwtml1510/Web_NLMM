@@ -10,7 +10,9 @@ router.post('/kiem-tra-dang-nhap', async  (req,res) => {
     let [rows] = await pool.query('SELECT * FROM `tai_khoan` WHERE `ten_tai_khoan` = ? AND `mat_khau` = ?', [tai_khoan.ten_tai_khoan, tai_khoan.mat_khau]);
     if (rows.length > 0) {
         // Đăng nhập thành công
-        req.session.user = rows[0]
+        req.session.user = {
+            id_tai_khoan: rows[0].id_tai_khoan,
+        };
         res.redirect('/trang-ca-nhan');
     } else {
         res.redirect('/dang-nhap');

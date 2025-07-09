@@ -102,23 +102,31 @@ function FormDoiThongTin(data) {
 }
 
 function NapTien() {
-    let tien = prompt('Nhập số tiền bạn muốn nạp vào tài khoản:', '0')
-    fetch('user-data/nap-tien', {
+    let tien = prompt('Nhập số tiền bạn muốn nạp vào tài khoản:', '0');
+    fetch('/user-data/nap-tien', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ so_tien: Number(tien) })
     })
-        .then(res=> res.json())
-        .then(data => {
-            alert(data.message);
-            LoadTrangCaNhan()
-        })
-    .catch(error => {console.log(error)})
-
+    .then(res => {
+        if (!res.ok) {
+            return res.text().then(text => {
+                throw new Error(`Lỗi server: ${res.status} - ${text}`);
+            });
+        }
+        return res.json();
+    })
+    .then(data => {
+        alert(data.message);
+        LoadTrangCaNhan();
+    })
+    .catch(error => {
+        console.error("NapTien error:", error);
+        alert("Đã xảy ra lỗi khi nạp tiền. Vui lòng thử lại.");
+    });
 }
-
 
 
 
