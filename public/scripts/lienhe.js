@@ -9,7 +9,7 @@ function submitlh () {
     } else {
         showAlert("Thông tin đã được gửi, sẽ có nhân viên trợ giúp bạn ngay");
     }
-};
+}
 
 function showAlert(message) {
     const overlay = document.createElement('div');
