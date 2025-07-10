@@ -1,71 +1,59 @@
-let map = new Map()
+window.submitlh = function () {
+    const hoVaTen = document.getElementById('hoVaTen').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const ghiChu = document.getElementById('ghiChu').value.trim();
 
-class thong_Tin {
-    #sdt
-    #ten
-    #email
-    #ghi_chu
-
-    constructor(sdt, ten, email, ghi_chu) {
-        this.sdt = sdt
-        this.#ten = ten
-        this.#email = email
-        this.#ghi_chu = ghi_chu
-    }
-
-    get sdt() {
-        return this.#sdt
-    }
-    set sdt(sdt) {
-        this.#sdt = sdt
-    }
-
-    get ten() {
-        return this.#ten
-    }
-    set ten(ten) {
-        this.#ten = ten
-    }
-    
-    get email() {
-        return this.#email
-    }
-    set email(email) {
-        this.#email = email
-    }
-
-    get ghi_chu() {
-        return this.#ghi_chu
-    }
-    set ghi_chu(ghi_chu) {
-        this.#ghi_chu = ghi_chu
-    }
-}
-
-function submit () {
-    let sdt = document.getElementById("phone").value
-    let ten = document.getElementById("hoVaTen").value
-    let email = document.getElementById("email").value
-    let ghi_chu = document.getElementById("ghiChu").value
-
-    if (sdt && ten && email && ghi_chu) {
-    let thongtin = new thong_Tin(sdt, ten, email, ghi_chu)
-    map.set(sdt, thongtin)
-    
-    alert(`Cảm ơn bạn đã để lại thôn tin cho NLMM.
-Tư vẫn sẽ sớm liên hệ với bạn để tư vấn.`)
+    if (!hoVaTen || !phone || !email || !ghiChu) {
+        showAlert("Hãy nhập thông tin mà bạn cần hỗ trợ");
     } else {
-        alert(`Bạn nhập thiếu thông tin rồi.
-Bạn hãy để lại thông tin đầy đủ để NLMM có 
-thể liên hệ tư vấn với bạn dễ dàng hơn.`)
+        showAlert("Thông tin đã được gửi, sẽ có nhân viên trợ giúp bạn ngay");
     }
+};
 
-    console.log(map) // xem map trong console
+function showAlert(message) {
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = 1000;
 
-    document.getElementById("phone").value = ""
-    document.getElementById("hoVaTen").value = ""
-    document.getElementById("email").value = ""
-    document.getElementById("ghiChu").value = ""
+    const popup = document.createElement('div');
+    popup.style.background = '#fff';
+    popup.style.padding = '30px';
+    popup.style.borderRadius = '12px';
+    popup.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+    popup.style.textAlign = 'center';
+    popup.style.maxWidth = '80%';
+
+    const messageText = document.createElement('p');
+    messageText.innerText = message;
+    messageText.style.marginBottom = '20px';
+    messageText.style.fontSize = '18px';
+    messageText.style.color = '#0d3b66';
+
+    const okButton = document.createElement('button');
+    okButton.innerText = 'OK';
+    okButton.style.padding = '10px 24px';
+    okButton.style.background = '#0d3b66';
+    okButton.style.color = '#fff';
+    okButton.style.border = 'none';
+    okButton.style.borderRadius = '8px';
+    okButton.style.cursor = 'pointer';
+    okButton.style.fontSize = '16px';
+
+    okButton.onclick = function () {
+        document.body.removeChild(overlay);
+    };
+
+    popup.appendChild(messageText);
+    popup.appendChild(okButton);
+    overlay.appendChild(popup);
+    document.body.appendChild(overlay);
 }
-
-// còn thiếu phần hiển thị các thông tin của khách hàng ở đâu ?
