@@ -10,6 +10,16 @@ router.get('/lich-su-mua-hang', async  (req, res) => {
 
 });
 
+router.get('/chi-tiet-hoa-don/:id', async (req, res) => {
+    const idHoaDon = req.params.id;
+    let [rows] = await pool.query('SELECT * FROM `hoa_don_chi_tiet` where `id_hoa_don` = ?', [idHoaDon]);
+    if (rows.length === 0) {
+        res.status(404).json({ success: false, message: 'Không tìm thấy hóa đơn' });
+        return;
+    }
+    res.json(rows);
+})
+
 
 router.get('/thong-tin-tai-khoan', async (req, res) => {
     let [[rows]] = await pool.query('SELECT * FROM `tai_khoan` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);

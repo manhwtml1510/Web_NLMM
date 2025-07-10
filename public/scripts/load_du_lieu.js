@@ -118,9 +118,71 @@ function NapTien() {
     .catch(error => {console.log(error)})
 
 }
+function lichSuMuaHang() {
+    fetch('user-data/lich-su-mua-hang')
+        .then(res => res.json())
+        .then(data => {
+            hienThiLichSuMuaHang(data)
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+function hienThiLichSuMuaHang(data) {
+    let lichSu = document.getElementById('content');
+    lichSu.innerHTML = `
+        <h2>Lịch sử mua hàng</h2><br>
+        <table class="table-1" id="listLichSu">
+            <tr>
+                <th class="width20">Ngày mua</th>
+                <th class="width20">Tổng tiền</th>
+            </tr>
+        </table>
+    `;
+    let listLichSu = document.getElementById('listLichSu');
+    data.forEach(item => {
+        listLichSu.innerHTML += `
+            <tr onclick="XemChiTietHoaDon(${item.id_hoa_don})">
+                <td>${item.thoi_gian}</td>
+                <td>${Number(item.tong_tien).toLocaleString('vi-VN')} VND</td>
+            </tr>
+        `
+    });
 
 
+}
 
+function XemChiTietHoaDon(idHoaDon) {
+    fetch(`user-data/chi-tiet-hoa-don/${idHoaDon}`)
+        .then(res => res.json())
+        .then(data => {
+            HienThiChiTietHoaDon(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+function HienThiChiTietHoaDon(data) {
+    let chiTiet = document.getElementById('content');
+    chiTiet.innerHTML = ''
+    data.forEach(item => {
+        console.log(item)
+        chiTiet.innerHTML += `
+            <div class="full-width container">
+                <div class="width10">
+                    <img src="../images/products/${item.id_san_pham}.png" class="product-img" alt="">
+                </div>
+
+                <div class="width50">
+                    <p class="f28">Số lượng: ${item.so_luong}</p>
+                </div>
+            </div>
+
+`
+    })
+}
 
 // Giỏ hàng
 function loadGioHang() {
