@@ -25,7 +25,7 @@ router.get('/san-pham/:id', async (req, res) => {
     let [rows] = await pool.query('SELECT * FROM `san_pham` WHERE `id_san_pham` = ?', [id]);
     res.render('ejs/index.ejs', {
         contentToInclude: 'san-pham.ejs',
-        sam_pham: rows[0]
+        san_pham: rows[0]
     })
 })
 
