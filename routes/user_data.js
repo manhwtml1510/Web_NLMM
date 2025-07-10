@@ -10,6 +10,16 @@ router.get('/lich-su-mua-hang', async  (req, res) => {
 
 });
 
+router.get('/chi-tiet-hoa-don/:id', async (req, res) => {
+    const idHoaDon = req.params.id;
+    let [rows] = await pool.query('SELECT * FROM `hoa_don_chi_tiet` where `id_hoa_don` = ?', [idHoaDon]);
+    if (rows.length === 0) {
+        res.status(404).json({ success: false, message: 'Không tìm thấy hóa đơn' });
+        return;
+    }
+    res.json(rows);
+})
+
 
 router.get('/thong-tin-tai-khoan', async (req, res) => {
     let [[rows]] = await pool.query('SELECT * FROM `tai_khoan` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
@@ -23,6 +33,18 @@ router.post('/cap-nhat-tai-khoan', async (req, res) => {
     res.redirect('/trang-ca-nhan');
 })
 
+router.put('/doi-mat-khau', async (req, res) => {
+    const {mat_khau_cu, mat_khau_moi} = req.body;
+    let [[user]] = await pool.query('SELECT * FROM `tai_khoan` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
+
+    if (user.mat_khau !== mat_khau_cu) {
+        res.json({success: false, message: 'Mật khẩu cũ không đúng'});
+        return;
+    }
+
+    await pool.query('UPDATE `tai_khoan` SET `mat_khau` = ? WHERE `id_tai_khoan` = ?', [mat_khau_moi, req.session.user.id_tai_khoan]);
+    res.json({success: true, message: 'Đổi mật khẩu thành công'});
+})
 
 
 
@@ -64,14 +86,13 @@ router.put('/cap-nhat-so-luong', async (req, res) => {
 
 
 router.put('/thanh-toan', async (req, res) => {
+    let [user] = await pool.query('SELECT * FROM `tai_khoan` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
     const { tong_tien } = req.body;
     let [gioHang] = await pool.query('SELECT * FROM `gio_hang` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
-
-    if (req.session.user.so_du < tong_tien) {
+    if (user[0].so_du < tong_tien) {
         res.json({ success: false, message: 'Số dư không đủ để thanh toán' });
         return;
     }
-    req.session.user.so_du -= tong_tien;
     const [invoiceResult] = await pool.query('INSERT INTO `hoa_don` (`id_khach_hang`) VALUES (?)', [req.session.user.id_tai_khoan]);
     const idHoaDon = invoiceResult.insertId;
 
@@ -84,27 +105,25 @@ router.put('/thanh-toan', async (req, res) => {
 
     await pool.query('DELETE FROM `gio_hang` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
     res.json({ success: true, message: 'Thanh toán thành công' });
+
+    [user] = await pool.query('SELECT * FROM `tai_khoan` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
+
 })
 
 router.put('/nap-tien', async (req, res) => {
-    try {
-        const { so_tien } = req.body;
-        const id = req.session.user?.id_tai_khoan;
-
-
-        if (!id || !so_tien || isNaN(so_tien)) {
-            return res.status(400).json({ message: 'Thiếu thông tin cần thiết!' });
-        }
-
-        await pool.query("UPDATE tai_khoan SET so_du = so_du + ? WHERE id_tai_khoan = ?", [so_tien, id]);
-
-        res.json({ message: 'Nạp tiền thành công!' });
-    } catch (err) {
-        console.error("Lỗi khi nạp tiền:", err);
-        res.status(500).json({ message: 'Lỗi server khi nạp tiền!' });
+    const { so_tien } = req.body;
+    if (so_tien <= 0) {
+        res.json({ success: false, message: 'Số tiền nạp không hợp lệ' });
+        return;
     }
-});
 
+    await pool.query('INSERT INTO `nap_tien` (`id_tai_khoan`, `so_tien`) VALUES (?, ?);', [req.session.user.id_tai_khoan, so_tien]);
+
+
+    let [user] = await pool.query('SELECT * FROM `tai_khoan` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
+    req.session.user = user[0];
+    res.json({ success: true, message: 'Nạp tiền thành công' });
+})
 
 
 

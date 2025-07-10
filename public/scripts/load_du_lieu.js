@@ -102,33 +102,87 @@ function FormDoiThongTin(data) {
 }
 
 function NapTien() {
-    let tien = prompt('Nhập số tiền bạn muốn nạp vào tài khoản:', '0');
-    fetch('/user-data/nap-tien', {
+    let tien = prompt('Nhập số tiền bạn muốn nạp vào tài khoản:', '0')
+    fetch('user-data/nap-tien', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ so_tien: Number(tien) })
     })
-    .then(res => {
-        if (!res.ok) {
-            return res.text().then(text => {
-                throw new Error(`Lỗi server: ${res.status} - ${text}`);
-            });
-        }
-        return res.json();
-    })
-    .then(data => {
-        alert(data.message);
-        LoadTrangCaNhan();
-    })
-    .catch(error => {
-        console.error("NapTien error:", error);
-        alert("Đã xảy ra lỗi khi nạp tiền. Vui lòng thử lại.");
-    });
+        .then(res=> res.json())
+        .then(data => {
+            alert(data.message);
+            LoadTrangCaNhan()
+        })
+    .catch(error => {console.log(error)})
+
+}
+function lichSuMuaHang() {
+    fetch('user-data/lich-su-mua-hang')
+        .then(res => res.json())
+        .then(data => {
+            hienThiLichSuMuaHang(data)
+        })
+        .catch(error => {
+            console.error(error);
+        });
 }
 
+function hienThiLichSuMuaHang(data) {
+    let lichSu = document.getElementById('content');
+    lichSu.innerHTML = `
+        <h2>Lịch sử mua hàng</h2><br>
+        <table class="table-1" id="listLichSu">
+            <tr>
+                <th class="width20">Ngày mua</th>
+                <th class="width20">Tổng tiền</th>
+            </tr>
+        </table>
+    `;
+    let listLichSu = document.getElementById('listLichSu');
+    data.forEach(item => {
+        listLichSu.innerHTML += `
+            <tr onclick="XemChiTietHoaDon(${item.id_hoa_don})">
+                <td>${item.thoi_gian}</td>
+                <td>${Number(item.tong_tien).toLocaleString('vi-VN')} VND</td>
+            </tr>
+        `
+    });
 
+
+}
+
+function XemChiTietHoaDon(idHoaDon) {
+    fetch(`user-data/chi-tiet-hoa-don/${idHoaDon}`)
+        .then(res => res.json())
+        .then(data => {
+            HienThiChiTietHoaDon(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+function HienThiChiTietHoaDon(data) {
+    let chiTiet = document.getElementById('content');
+    chiTiet.innerHTML = ''
+    data.forEach(item => {
+        console.log(item)
+        chiTiet.innerHTML += `
+            <div class="full-width container">
+                <div class="width10">
+                    <img src="../images/products/${item.id_san_pham}.png" class="product-img" alt="">
+                </div>
+
+                <div class="width50">
+                    <p class="f28">Số lượng: ${item.so_luong}</p>
+                </div>
+            </div>
+
+`
+    })
+}
 
 // Giỏ hàng
 function loadGioHang() {
@@ -260,7 +314,7 @@ function ThanhToan() {
 
 
 // Load dữ liệu tùy theo trang
-setTimeout(() => {
+document.addEventListener('DOMContentLoaded', () => {
     switch (window.location.pathname) {
         case '/bo-suu-tap':
             LoadSanPham()
@@ -274,6 +328,6 @@ setTimeout(() => {
         default:
             break;
     }
-}, 100);
+});
 
 
