@@ -1,4 +1,4 @@
-window.submitlh = function () {
+function submitlh () {
     const hoVaTen = document.getElementById('hoVaTen').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const email = document.getElementById('email').value.trim();
