@@ -340,3 +340,229 @@ body {
 .close:hover {
     color: black;
 }
+
+
+/* Đăng nhập */
+.login-container {
+    display: flex;
+    width: 900px;
+    max-width: 100%;
+    min-height: 500px;
+    margin: 60px auto;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.login-left, .login-right {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-left {
+    background-color: white;
+}
+
+.login-right {
+    background: linear-gradient(to right, #32c8bd, #25a196);
+    color: white;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2ebaae;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.social-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+    text-decoration: none;
+}
+
+.login-subtext {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: #eee;
+    font-size: 14px;
+}
+
+.forgot-password {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-btn {
+    margin-top: 20px;
+    padding: 12px 45px;
+    background-color: #2ebaae;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-btn {
+    margin-top: 20px;
+    padding: 12px 45px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* === Giao diện riêng cho phần liên hệ === */
+
+.contact-section {
+    background: linear-gradient(to right, #e8f5f9, #ffffff);
+    padding: 60px 40px;
+    border-radius: 20px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Thông tin liên hệ bên trái */
+.contact-info {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #0d3b66;
+    padding: 20px;
+    max-width: 300px;
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Form liên hệ bên phải */
+.contact-form {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form h2 {
+    color: #0d3b66;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form label {
+    color: #0d3b66;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1.5px solid #c4e2ec;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.contact-form input:focus {
+    outline: none;
+    border-color: #1aa7a7;
+    box-shadow: 0 0 5px rgba(38, 166, 154, 0.3);
+}
+
+/* Nút gửi */
+.contact-form .submit-btn {
+    background-color: #0d3b66;
+    color: #fff;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 40px;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+/*fgpassword*/
+.fg_password-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.input-field {
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 20px;
+    border: 1px solid #2196F3;
+    border-radius: 5px;
+    outline: none;
+}
+
+.blue-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 2px solid #2196F3;
+    border-radius: 5px;
+    background-color: white;
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.blue-button:hover {
+    background-color: #2196F3;
+    color: white;
+}
