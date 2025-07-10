@@ -23,6 +23,18 @@ router.post('/cap-nhat-tai-khoan', async (req, res) => {
     res.redirect('/trang-ca-nhan');
 })
 
+router.put('/doi-mat-khau', async (req, res) => {
+    const {mat_khau_cu, mat_khau_moi} = req.body;
+    let [[user]] = await pool.query('SELECT * FROM `tai_khoan` WHERE `id_tai_khoan` = ?', [req.session.user.id_tai_khoan]);
+
+    if (user.mat_khau !== mat_khau_cu) {
+        res.json({success: false, message: 'Mật khẩu cũ không đúng'});
+        return;
+    }
+
+    await pool.query('UPDATE `tai_khoan` SET `mat_khau` = ? WHERE `id_tai_khoan` = ?', [mat_khau_moi, req.session.user.id_tai_khoan]);
+    res.json({success: true, message: 'Đổi mật khẩu thành công'});
+})
 
 
 

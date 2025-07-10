@@ -252,7 +252,7 @@ function ThanhToan() {
 
 
 // Load dữ liệu tùy theo trang
-setTimeout(() => {
+document.addEventListener('DOMContentLoaded', () => {
     switch (window.location.pathname) {
         case '/bo-suu-tap':
             LoadSanPham()
@@ -266,6 +266,6 @@ setTimeout(() => {
         default:
             break;
     }
-}, 100);
+});
 
 
