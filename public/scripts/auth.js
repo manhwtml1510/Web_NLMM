@@ -8,7 +8,6 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('submit', (e) => {
-    // Xử lý form đăng ký
     if (e.target.matches('#register-form')) {
         e.preventDefault();
         const form = e.target;
@@ -36,7 +35,6 @@ document.addEventListener('submit', (e) => {
         });
     }
 
-    // Xử lý form quên mật khẩu
     if (e.target.matches('#forgot-password-form')) {
         e.preventDefault();
         const form = e.target;

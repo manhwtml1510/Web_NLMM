@@ -18,13 +18,11 @@ router.post('/kiem-tra-dang-nhap', async  (req,res) => {
 
 router.post('/dang-ky', async (req, res) => {
     const tai_khoan = req.body;
-    // Basic validation
     if (!tai_khoan.ten_nguoi_dung || !tai_khoan.ten_tai_khoan || !tai_khoan.mat_khau || !tai_khoan.email) {
         return res.status(400).json({ success: false, message: 'Vui lòng điền đầy đủ thông tin bắt buộc.' });
     }
 
     try {
-        // Check if username or email already exists
         const [existingUser] = await pool.query('SELECT * FROM `tai_khoan` WHERE `ten_tai_khoan` = ? OR `email` = ?', [tai_khoan.ten_tai_khoan, tai_khoan.email]);
         if (existingUser.length > 0) {
             return res.status(409).json({ success: false, message: 'Tên đăng nhập hoặc email đã tồn tại.' });
