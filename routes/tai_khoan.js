@@ -46,7 +46,7 @@ router.post('/quen-mat-khau', async (req, res) => {
         if (taikhoan.length === 0) {
             res.json({ success: false, message: 'Không tìm thấy tài khoản với thông tin đã cung cấp.' });
         } else {
-            res.json({ success: true, message: `Mật khẩu cuủa bạn là: ${taikhoan[0].mat_khau}` });
+            res.json({ success: true, message: `Mật khẩu của bạn là: ${taikhoan[0].mat_khau}` });
         }
 
 

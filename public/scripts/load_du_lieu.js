@@ -184,6 +184,28 @@ function HienThiChiTietHoaDon(data) {
     })
 }
 
+function FormDoiMatKhau(){
+    let doiMK = document.getElementById('content');
+    doiMK.innerHTML = `
+        <h2>Đổi mật khẩu</h2>
+        <br>
+        <div class="container full-width">
+            <form class="width85" action="/user-data/doi-mat-khau" method="POST">
+                <label class="f20">Mật khẩu cũ</label>
+                <br>
+                <input class="form-2 width60" name="mat_khau_cu" type="password" required>
+                <br>
+                <label class="f20">Mật khẩu mới</label>
+                <br>
+                <input class="form-2 width60" name="mat_khau_moi" type="password" required>
+                <br>
+                <br><br>
+                <button class="button" type="submit">Xác nhận</button>
+            </form>
+        </div>
+    `;
+}
+
 // Giỏ hàng
 function loadGioHang() {
     fetch('user-data/gio-hang')
